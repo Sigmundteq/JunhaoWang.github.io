@@ -6,83 +6,158 @@
     <title>Junhao Wang - Personal Webpage</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f0f2f5;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        header {
-            background-color: #007BFF;
+        .sidebar {
+            background-color: #004085;
             color: #fff;
+            width: 250px;
+            padding: 30px 20px;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .sidebar h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
             text-align: center;
-            padding: 40px 0;
+            font-weight: bold;
         }
 
-        h1 {
-            font-size: 36px;
+        .sidebar p {
+            font-size: 14px;
+            line-height: 1.6;
             margin-bottom: 10px;
-        }
-
-        h2 {
-            font-size: 28px;
-            margin-top: 20px;
+            text-align: center;
         }
 
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin-left: 280px; /* 增加与侧栏的距离 */
+            max-width: 1100px;
+            padding: 40px 25px; /* 增加内边距 */
+          padding: 0px 25px 40px ;
             background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            line-height: 1.6;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 3px;
+            margin-bottom: 30px;
+            flex-grow: 1;
         }
 
-        .contact-info {
-            margin-top: 20px;
+        h2 {
+            font-size: 30px;
+            margin-top: 30px;
+            color: #004085;
         }
 
         .section {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
+            margin-bottom: 30px;
         }
 
         .section-title {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #007BFF;
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #004085;
+            padding-bottom: 10px;
+            color: #004085;
         }
 
         .section-content {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        .section ul {
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .relevant-coursework {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .relevant-coursework ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .experience {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 5px solid #004085;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .experience h3 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #004085;
+        }
+
+        .experience p {
+            margin: 10px 0;
             font-size: 16px;
-            margin-top: 10px;
             color: #333;
+        }
+
+        .experience ul {
+            margin-top: 10px;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .experience ul li {
+            margin-bottom: 8px;
         }
 
         footer {
             text-align: center;
-            margin-top: 20px;
-            color: #666;
+            padding: 20px 0;
+            margin-top: auto;
+            color: #777;
+            background-color: #f0f2f5;
+            border-top: 1px solid #ddd;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <header>
+    <div class="sidebar">
         <h1>Junhao Wang</h1>
-        <p>Nanjing, Jiangsu, China, 210044</p>
-        <p>Email: <a href="mailto:junhao.wong.geogr@gmail.com">junhao.wong.geogr@gmail.com</a></p>
-        <p>Phone: +86-18452427815</p>
-    </header>
+        <p>Nanjing 210044, China</p>
+        <p>Email: junhao.wong.geogr@gmail.com</p>
+        <p>Phone: +86-18452427815 / +1-8259832879</p>
+    </div>
 
     <div class="container">
         <div class="section">
             <h2 class="section-title">Education</h2>
             <div class="section-content">
-                <p><strong>Nanjing University of Information Science and Technology</strong></p>
-                <p>Undergraduate student majoring in geography</p>
+                <p><strong>Nanjing University of Information Science and Technology (NUIST)</strong></p>
+                <p>Physical Geography and Resource Environment</p>
+                <p>GPA: 87/100</p>
                 <p>Nanjing, Jiangsu</p>
                 <p>September 2021 – Present</p>
             </div>
@@ -90,50 +165,56 @@
 
         <div class="section">
             <h2 class="section-title">Relevant Coursework</h2>
-            <div class="section-content">
+            <div class="section-content relevant-coursework">
                 <ul>
-                    <li>Physical Geography</li>
-                    <li>Analytical Chemistry</li>
+                    <li>Global Change</li>
                     <li>Cartography</li>
-                    <li>Principles of Remote Sensing</li>
+                    <li>Remote Sensing Digital Image Processing</li>
                     <li>Principles of Geographic Information Systems</li>
                     <li>Hydrology and Water Resources</li>
+                </ul>
+                <ul>
                     <li>Meteorology and Climatology</li>
                     <li>Soil Geography</li>
                     <li>Applied Statistical Analysis for Geoscience</li>
                     <li>Principles of Terrestrial Ecosystem Ecology</li>
-                    <!-- Add more coursework here -->
+                    <li>Analytical Chemistry</li>
                 </ul>
             </div>
         </div>
 
         <div class="section">
             <h2 class="section-title">Research Experience</h2>
-            <div class="section-content">
-                <p><strong>Freshwater process in the high latitude ocean</strong></p>
-                <p>Supervisor: Prof. Paul Myers, <a href="mailto:pmyers@ualberta.ca">pmyers@ualberta.ca</a></p>
-                <p> July 2024– October 2024</p>
+
+            <div class="experience">
+                <h3>Climate impact on the length of sea ice season and ecosystem response</h3>
+                <p><strong>Supervisor:</strong> Prof. Paul Myers, <a href="mailto:pmyers@ualberta.ca">pmyers@ualberta.ca</a></p>
+                <p><strong>Duration:</strong> July 2024 – October 2024</p>
                 <ul>
-                    <li>Used historical data analysis and high resolution numerical modelling to examine past changes in the ocean and sea-ice in the regions around Canada.</li>
-                    <li>Examined key underlying physical and dynamical processes associated with sea-ice changes.</li>
-                    <li>Understood how the waters and sea-ice around Canada will evolve in the future, and provided that information to stakeholders concerned with such information.</li>
+                    <li>Analyzed the changes in sea ice concentration and thickness and their spatial structure in Baffin Bay and Hudson Bay.</li>
+                    <li>Evaluated the changes of ice free season by looking at sea ice breakup and freeze-up processes.</li>
+                    <li>Examined the impact on ecosystem including phytoplankton productivity and biomass productivity.</li>
                 </ul>
-                <p><strong>Land use changes and evaluation of habitat quality in China’s Coastal Zone</strong></p>
-                <p>Supervisor: Prof. Chengyi Zhao, <a href="mailto:zhaocy@nuist.edu.cn">zhaocy@nuist.edu.cn</a></p>
-                <p>May 2023 - Present</p>
+            </div>
+
+            <div class="experience">
+                <h3>Land use changes and evaluation of habitat quality in China’s Coastal Zone</h3>
+                <p><strong>Supervisor:</strong> Prof. Chengyi Zhao, <a href="mailto:zhaocy@nuist.edu.cn">zhaocy@nuist.edu.cn</a></p>
+                <p><strong>Duration:</strong> March 2023 – April 2024</p>
                 <ul>
-                    <li>Coupled the PLUS model and InVEST model to predict the spatial distribution of land use changes and quantitatively assessed the habitat quality from 2020 to 2060 under three SSP-RCP scenarios.</li>
-                    <li>Evaluate the driving forces of changes of habitat quality and contribution of land cover changes to the degradation of habitat quality.</li>
+                    <li>Coupled the PLUS model and InVEST model to predict the spatial distribution of land use changes and quantitatively assessed the habitat quality from 2020 to 2060 under three SSP scenarios.</li>
+                    <li>Evaluated the driving forces of changes of habitat quality and contribution of land cover changes to the degradation of habitat quality.</li>
                 </ul>
-                <!-- Add details about your other research experience here -->
-                <p><strong>Study on Streamflow Forecasting Based on Machine Learning</strong></p>
-                <p>Supervisor: Prof. Buda Su, <a href="mailto:subd@nuist.edu.cn">subd@nuist.edu.cn</a></p>
-                <p>May 2022 - September 2023</p>
+            </div>
+
+            <div class="experience">
+                <h3>Anthropogenic climate change impact on runoff</h3>
+                <p><strong>Supervisor:</strong> Prof. Buda Su, <a href="mailto:subd@nuist.edu.cn">subd@nuist.edu.cn</a></p>
+                <p><strong>Duration:</strong> September 2022 – February 2024</p>
                 <ul>
-                    <li>Evaluated the impact of anthropogenic climate changes on the runoff using machine learning models.</li>
-                    <li>Provided a robust foundation for the strategic management and sustainable use of water resources.</li>
+                    <li>Revealed the changes in discharge pattern in the upper Yangtze River basin during 1900-2099 under different forcings.</li>
+                    <li>Compared the impact of anthropogenic climate change with the impact of natural variability on discharge pattern.</li>
                 </ul>
-                <!-- Add details about your other research experience here -->
             </div>
         </div>
 
@@ -141,11 +222,10 @@
             <h2 class="section-title">Achievements</h2>
             <div class="section-content">
                 <ul>
-                    <li>Canada MITACS Globalink Research Internship Award</li>
-                    <li>Geospatial Big Data and GeoAI Graduate Summer School in Nanjing Normal University | Excellent Student Scholar</li>
+                    <li>Canada MITACS Globalink Research Internship Award (10,000 Canadian Dollar)</li>
+                    <li>Geospatial Big Data and GeoAI Graduate Summer School | Excellent Student Scholar</li>
                     <li>NUIST First Class Scholarship</li>
                     <li>NUIST Merit Student</li>
-                    <!-- Add more achievements here -->
                 </ul>
             </div>
         </div>
@@ -153,9 +233,9 @@
         <div class="section">
             <h2 class="section-title">Technical Skills</h2>
             <div class="section-content">
-                <p><strong>Coding:</strong> C, R, Python, Matlab</p>
+                <p><strong>Coding:</strong> R, Python, Matlab</p>
                 <p><strong>Tools:</strong> ArcGIS Pro, ENVI, SPSS, Google Earth Engine</p>
-                <p><strong>Models:</strong> SWAT Model</p>
+                <p><strong>Models:</strong> SWAT Model, PLUS Model, InVest Model</p>
             </div>
         </div>
 
@@ -163,8 +243,29 @@
             <h2 class="section-title">Research Interests</h2>
             <div class="section-content">
                 <ul>
-                    <li>Hydrological Modelling</li>
-                    <li>Climate Change</li>
-                    <li>Ecosystem Science</li>
-                    <li>Extreme Weather Events</li>
-                    <li>Climate change impacts and adaptation</li>
+                    <li>Hydroclimatology</li>
+                    <li>Climate Change Impacts and Adaptation</li>
+                    <li>Ecosystem and Landscape</li>
+                  	 <li>Arctic Oceanography</li>
+                    <li>Land Use and Cover Change (LUCC)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Publications</h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Wang, J.</strong>, Chen, Z., and Su, B.: Anthropogenic climate change impact on runoff in the upper Yangtze River basin, *Journal of Flood Risk Management*, in review.</li>
+                    <li>Wang, G., <strong>Wang, J.</strong>, Chen, J., Ma, L., Ye, K., and Zheng, G.: Impact of *Spartina alterniflora* Expansion on the Tidal Creek Formation in the mudflat of Yellow Sea, in prep.</li>
+                    <li><strong>Wang, J.</strong>, Chen, J., and Zhao, C.: Identification and evaluation of land use changes induced habitat quality in China’s coastal zone, in prep.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Junhao Wang. All rights reserved.</p>
+    </footer>
+</body>
+</html>
